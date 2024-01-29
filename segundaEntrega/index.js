@@ -4,9 +4,9 @@ let productManager=new ProductManager();
 
 let products=async ()=>{
     try{
-        await productManager.addProduct("title 2","description title 2");
-        await productManager.addProduct("title 1","description title 1");
-        await productManager.addProduct("title 3","description title 3");
+        await productManager.addProduct("title 2","description title 2",10,"http://google.com","code",1);
+        await productManager.addProduct("title 1","description title 1",10,"http://google.com2","code2",2);
+        await productManager.addProduct("title 3","description title 3",10,"http://google.com3","code3",3);
         
         console.log("*------------MUESTRO TODO los datos------------------------")
         let prod= await productManager.getProduct();
@@ -32,6 +32,10 @@ let products=async ()=>{
         const newProduct ={
             title:"title modified",
             description:"modified",
+            price:100,
+            thumbnail:"prueba modifie",
+            code:"code modified",
+            stock:1000
         }
 
        await productManager.updateProduct(3,newProduct);

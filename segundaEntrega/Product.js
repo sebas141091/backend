@@ -4,10 +4,11 @@ class Product{
         this.id=id;
         this.title=title;
         this.description=description;
-        //this.price=price;
-        //this.thumbnail=thumbnail;
-        //this.code=code;
-        //this.stock=stock;
+        this.price=price;
+        this.thumbnail=thumbnail;
+        this.code=code;
+        this.stock;
+
     }
 }
 class ProductManager{
@@ -30,9 +31,9 @@ class ProductManager{
         }
     }
 
-    addProduct= async (title,description)=>{
+    addProduct= async (title,description,price,thumbnail,code,stock)=>{
     
-        let newProduct= new Product(this.#product.length+1,title,description)
+        let newProduct= new Product(this.#product.length+1,title,description,price,thumbnail,code,stock)
         try{
             await this.#CreateDirBase();
             
