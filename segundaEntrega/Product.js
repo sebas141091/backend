@@ -37,6 +37,10 @@ class ProductManager{
         try{
             await this.#CreateDirBase();
             
+            console.log("probamos q hay en el objeto ")
+            
+            let codeRepetido= this.#product.find(code=>code.code===newProduct.code)
+            (codeRepetido)?console.log("esta"):("no esta");
             this.#product.push(newProduct);
             await this.#File.promises.writeFile(this.#Path,JSON.stringify(this.#product));
         }

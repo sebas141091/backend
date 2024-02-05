@@ -44,6 +44,14 @@ let products=async ()=>{
         let prodNew1= await productManager.getProduct();
         console.log(prodNew1);
 
+
+        await productManager.addProduct("title 4","description title 4",40,"http://google.com4","code4",4);
+
+        await productManager.addProduct("title 4","description title 4",40,"http://google.com4","code4",4);
+        
+        console.log("*------------MUESTRO TODO4 ------------------------")
+        let prodNew4= await productManager.getProduct();
+        console.log(prodNew4);
     }
     catch(error){
 
