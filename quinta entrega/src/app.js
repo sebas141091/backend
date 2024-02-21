@@ -40,10 +40,10 @@ socketServer.on('connection', async(socket)=>{
         let id,repiteID,prodExist;
         let productos=[]
         productos=await productManager.getProduct();
-        console.log(datosAg)
+        
         //validamos que el id no se repita
         if(productos.length>=10){
-            return res.send("no hay mas id para generar productos , elimine algun producto")
+            console.log("no hay mas id para generar productos , elimine algun producto")
         }else{
             do {
                 id = Math.floor(Math.random() * 10 + 1);
