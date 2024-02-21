@@ -1,0 +1,15 @@
+<div>
+    <h1>prueba de algo en home  {{name}}</h1>
+
+    {{#each prod}}
+        <div>
+            <h1>Título: {{this.title}}</h1>
+            <p>Descripción: {{this.description}}</p>
+            <p>Precio: {{this.price}}</p>
+           
+        </div>
+    {{/each}}
+       
+</div>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/home.js"></script>

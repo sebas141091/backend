@@ -1,0 +1,46 @@
+[
+  {
+    "id": 10,
+    "title": "seb12'3a",
+    "description": "sebas1",
+    "code": "seba1s",
+    "price": 20,
+    "status": true,
+    "stock": "sebas1",
+    "category": "se1bas",
+    "thumbnail": "seba1s"
+  },
+  {
+    "id": 8,
+    "title": "seb120''0'3a",
+    "description": "sebas1",
+    "code": "seba1s",
+    "price": 10,
+    "status": true,
+    "stock": "sebas1",
+    "category": "se1bas",
+    "thumbnail": "seba1s"
+  },
+  {
+    "id": 9,
+    "title": "asd",
+    "description": "asd",
+    "code": "sad",
+    "price": 2,
+    "status": true,
+    "stock": "12",
+    "category": "asd",
+    "thumbnail": "asd"
+  },
+  {
+    "id": 5,
+    "title": "asd12",
+    "description": "asd",
+    "code": "sad",
+    "price": 2,
+    "status": true,
+    "stock": "12",
+    "category": "asd",
+    "thumbnail": "asd"
+  }
+]

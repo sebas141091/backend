@@ -40,7 +40,7 @@ export class ProductManager{
             await this.#CreateDirBase();
             this.#product= await this.getProduct();
             this.#product.push(newProduct);
-            await this.#File.promises.writeFile(this.#Path,JSON.stringify(this.#product),null,2);
+            await this.#File.promises.writeFile(this.#Path,JSON.stringify(this.#product,null,2));
         }
         catch (error){
             console.log(`Error Creating new product : ${JSON.stringify(newProduct)},detail this error ${error}`);
@@ -99,7 +99,8 @@ export class ProductManager{
         try{
             await this.#CreateDirBase();
             let productRead= await this.#File.promises.readFile(this.#Path,"utf-8");
-            await this.#File.promises.writeFile(this.#Path,JSON.stringify(JSON.parse(productRead).filter(productId=> productId.id!==id )));
+       
+            await this.#File.promises.writeFile(this.#Path,JSON.stringify(JSON.parse(productRead).filter(productId=> productId.id!==id ),null,2));
             return console.log(`The User with id : ${id} was deleted`)
         }
         catch (error){
