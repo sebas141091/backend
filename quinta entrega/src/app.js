@@ -33,7 +33,7 @@ const socketServer = new Server(http);
 socketServer.on('connection', async(socket)=>{
     
     console.log("nuevo cliente conectado")
-    /*****************agregamos un nuevo producto********************** */
+    /******agregamos un nuevo producto******* */
     socket.on('agregar',async(data)=>{
         let datosAg=[]
         datosAg=data.AgregProd;
@@ -63,18 +63,20 @@ socketServer.on('connection', async(socket)=>{
                 }else{
                     productManager.addProduct(id,datosAg.title,datosAg.description,datosAg.code,parseInt(datosAg.price),datosAg.status,datosAg.stock,datosAg.category,datosAg.thumbnail);
                     console.log("procuto dado de alta correctamente");
+                    setTimeout(async() => {
+                        prod= await productManager.getProduct();
+                        socketServer.emit('mostrarProd',{prod}) 
+                    }, 100);
+                    
                 }
             
             }
         }
 
-
-
-
     })
 
 
-    //********** para eliminar por id************* */
+    //**** para eliminar por id***** */
     prod= await productManager.getProduct();
     socket.emit('mostrarProd',{prod})
     socket.on('elimina',async(data)=>{
